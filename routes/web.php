@@ -25,6 +25,10 @@ Route::get('/About', function () {
     return view('contact');
 });
 
+Route::get('/Detail', function () {
+    return view('detail');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
