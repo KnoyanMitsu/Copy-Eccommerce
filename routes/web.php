@@ -55,13 +55,13 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/beli', function () {
+    Route::get('/selesai', function () {
         if (Auth::user()->role == 'guest') {
             return app('App\Http\Auth\RegisterController')->showSettings();
         } else {
-            return view('Beli');
+            return view('selesai');
         }
-    })->name('Beli');
+    })->name('selesai');
 });
 
 

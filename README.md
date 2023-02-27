@@ -7,13 +7,13 @@
 - [X] Keronjang Belanya
 - [X] Checkout (Debit)
 - [X] Checkout (cod)
-- [Ongoing] Selesar checkout (Debit)
-- [Ongoing] Selesai checkout (cod)
+- [X] Selesar checkout (Debit)
+- [X] Selesai checkout (cod)
 - [Ongoing] Status pesanan
 - [ ] Halamon admin
 - [ ] List produt
 - [ ] Tambah produk
-- [Ongoing] About us
+- [X] About us
 - [Ongoing] Contact us
 - [ ] List Product
 - [ ] Detail kategori

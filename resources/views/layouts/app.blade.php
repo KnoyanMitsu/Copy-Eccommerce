@@ -34,10 +34,20 @@
                     </button>
 
                 </div>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
                 <ul class="navbar-nav ms-auto" >
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:black" href="{{ url('/') }}">{{ __('Home') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:black">{{ __('Kategori') }}</a>
+                    </li>
+
+
+                    <a href="{{ route('Keranjang') }}" class="material-symbols-outlined">shopping_cart</a>
                 </ul>
             </div>
         </nav>
@@ -52,6 +62,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </body>
 
 </html>

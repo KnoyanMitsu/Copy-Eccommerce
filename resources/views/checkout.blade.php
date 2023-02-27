@@ -52,7 +52,7 @@
                         <p>Rp.7.000</p>
                         <p>Rp.1.000</p>
                         <p>Rp.39.780</p></div>
-                        <button class="btn btn-primary" style="background-color:#B5CF49;">Buat Pesanan</button>
+                        <a href="{{ route('selesai') }}" class="btn btn-primary" style="background-color:#B5CF49;">Buat Pesanan</a>
                 </div>
             </div>
         </div>

@@ -53,7 +53,7 @@
                 </div>
                 <div class="col mt-3 mb-3">
                     <h2>Rp -----</h2>
-                    <Button class="btn btn-primary " style="background-color:#B5CF49;">Checkout</Button>
+                    <a href="{{ route('checkout') }}" class="btn btn-primary " style="background-color:#B5CF49;">Checkout</a>
                 </div>
             </div>
         </div>

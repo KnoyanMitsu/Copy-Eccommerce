@@ -19,7 +19,7 @@
                             <div class="row gap-4">
                                 <a class="col btn btn-primary  btn"  href="{{ route('Keranjang') }}"
                                     style="background-color:#B5CF49; width: 200px;">Add to card</a>
-                                <a class="col btn btn-primary  btn" href="{{ route('Beli') }}"
+                                <a class="col btn btn-primary  btn" href="{{ route('checkout') }}"
                                     style="background-color:#B5CF49;">Beli Sekarang</a>
                             </div>
                     </div>
