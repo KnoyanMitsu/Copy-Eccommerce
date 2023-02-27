@@ -1,3 +1,26 @@
+<h1>My To do</h1>
+
+- [X] Halaman Utama
+- [x] Login
+- [x] Register
+- [x] Detail produk
+- [X] Keronjang Belanya
+- [X] Checkout (Debit)
+- [X] Checkout (cod)
+- [Ongoing] Selesar checkout (Debit)
+- [Ongoing] Selesai checkout (cod)
+- [Ongoing] Status pesanan
+- [ ] Halamon admin
+- [ ] List produt
+- [ ] Tambah produk
+- [Ongoing] About us
+- [Ongoing] Contact us
+- [ ] List Product
+- [ ] Detail kategori
+- [ ] Hasil Percarian
+- [ ] List Kategori
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
