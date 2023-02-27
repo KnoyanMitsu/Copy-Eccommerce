@@ -46,6 +46,7 @@
         </div>
         <div class="justify-content-center mb-5">
             <h2 class="text-center mb-3 ">Kategory</h1>
+                <hr>
                 <div class="row gap-5 row-cols-5">
                     <div class="card col" style="width:13rem;">
                         <div class="card-body">
@@ -87,6 +88,7 @@
 
         <div class=" mb-5">
             <h2 class="text-center mb-3">Product</h1>
+                <hr style="height:30px; color:black;">
                 <div class="row row-cols-3 gap-5">
                     <div class="card col" style="width:18rem">
                         <img style="height:200px"

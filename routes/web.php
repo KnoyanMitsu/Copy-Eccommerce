@@ -17,18 +17,53 @@ Route::get('/', function () {
     return view('beranda');
 });
 
-Route::get('/Contact', function () {
+Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/About', function () {
+Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/Detail', function () {
+Route::get('/detail', function () {
     return view('detail');
 });
 
+
+
 Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/keranjang', function () {
+        if (Auth::user()->role == 'guest') {
+            return app('App\Http\Auth\RegisterController')->showSettings();
+        } else {
+            return view('keranjang');
+        }
+    })->name('Keranjang');
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/checkout', function () {
+        if (Auth::user()->role == 'guest') {
+            return app('App\Http\Auth\RegisterController')->showSettings();
+        } else {
+            return view('checkout');
+        }
+    })->name('checkout');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/beli', function () {
+        if (Auth::user()->role == 'guest') {
+            return app('App\Http\Auth\RegisterController')->showSettings();
+        } else {
+            return view('Beli');
+        }
+    })->name('Beli');
+});
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

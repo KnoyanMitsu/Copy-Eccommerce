@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Ecommerce</title>
 </head>
 <body>
-    
-    <div class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+    <div class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#D2E190;">
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
@@ -23,7 +23,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" >
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))

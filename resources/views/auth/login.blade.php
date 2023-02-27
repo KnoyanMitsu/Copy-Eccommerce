@@ -3,6 +3,7 @@
 
 @section('content')
 <div class="container">
+    <div class="text-center mb-4"><h2 class="font-weight-bold">Nama Perusahaan</h2></div>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -37,21 +38,25 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="text-right">
+                                @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            @endif
+                            </div>
                         </div>
 
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                        <div class="row mb-3">
+                            <div class=" text-center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <p>Belum memiliki akun? <a href="{{ route('register') }}">Daftar</a></p>
                         </div>
                     </form>
                 </div>
