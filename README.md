@@ -11,13 +11,13 @@
 - [X] Selesai checkout (cod)
 - [X] Status pesanan
 - [ ] Halamon admin
-- [ ] List produt
+- [Stop] List produt
 - [ ] Tambah produk
 - [X] About us
 - [X] Contact us
-- [ ] List Product
-- [ ] Detail kategori
-- [ ] Hasil Percarian
+- [] List Product
+- [Ongoing] Detail kategori
+- [Ongoing] Hasil Percarian
 - [ ] List Kategori
 
 
