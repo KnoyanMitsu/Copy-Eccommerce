@@ -15,7 +15,7 @@
 - [ ] Tambah produk
 - [X] About us
 - [X] Contact us
-- [] List Product
+- [ ] List Product
 - [Ongoing] Detail kategori
 - [Ongoing] Hasil Percarian
 - [ ] List Kategori
