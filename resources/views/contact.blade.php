@@ -1,16 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Beranda</title>
-</head>
+@extends('layouts.navbar')
+
+@section('content')
+
 <body>
-    @include('layouts.navbar')
     <div class="container">
-        <h1>ini Contact</h1>
+        <div class="card">
+            <div class="container mt-3">
+                <h2 class="font-weight-bold mb-3">Contact Us</h2>
+                <h2 class="font-weight-bold text-center mb-5">Nama Perusahaan</h2>
+                <div class="mb-5">
+                    <h3 class="mb-2">Hari Kerja</h3>
+                    <hr>
+                    <p>Senin-Jum'at   09:00 - 17:00</p>
+                    <p>Sabtu  09:00 - 15:00</p>
+                    <p>Minggu  On Request</p>
+                </div>
+                <div class="mb-3">
+                    <h3 class="mb-2">Hari Kerja</h3>
+                    <hr>
+                    <p>Email@gmail.com</p>
+                    <p>+62123456789</p>
+                </div>
+            </div>
+        </div>
     </div>
-    @include('layouts.footbar')
 </body>
-</html>
+
+@endsection

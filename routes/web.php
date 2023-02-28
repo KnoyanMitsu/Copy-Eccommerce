@@ -65,5 +65,16 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/status', function () {
+        if (Auth::user()->role == 'guest') {
+            return app('App\Http\Auth\RegisterController')->showSettings();
+        } else {
+            return view('status');
+        }
+    })->name('status');
+});
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

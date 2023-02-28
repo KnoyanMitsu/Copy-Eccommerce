@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="{{ asset('index.css') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -42,12 +42,18 @@
                     <li class="nav-item">
                         <a class="nav-link" style="color:black" href="{{ url('/') }}">{{ __('Home') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color:black">{{ __('Kategori') }}</a>
-                    </li>
 
 
-                    <a href="{{ route('Keranjang') }}" class="material-symbols-outlined">shopping_cart</a>
+
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle material-symbols-outlined" data-toggle="dropdown" style="background-color:#B5CF49;">
+                            shopping_cart
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="{{ route('Keranjang') }}" class="dropdown-item">Keranjang</a>
+                          <a class="dropdown-item" href="#">Status Pesanan</a>
+                        </div>
+                      </div>
                 </ul>
             </div>
         </nav>
@@ -62,6 +68,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </body>
 

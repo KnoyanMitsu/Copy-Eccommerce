@@ -9,12 +9,12 @@
 - [X] Checkout (cod)
 - [X] Selesar checkout (Debit)
 - [X] Selesai checkout (cod)
-- [Ongoing] Status pesanan
+- [X] Status pesanan
 - [ ] Halamon admin
 - [ ] List produt
 - [ ] Tambah produk
 - [X] About us
-- [Ongoing] Contact us
+- [X] Contact us
 - [ ] List Product
 - [ ] Detail kategori
 - [ ] Hasil Percarian
