@@ -51,7 +51,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a href="{{ route('Keranjang') }}" class="dropdown-item">Keranjang</a>
-                          <a class="dropdown-item" href="#">Status Pesanan</a>
+                          <a class="dropdown-item" href="{{ route('status') }}">Status Pesanan</a>
                         </div>
                       </div>
                 </ul>
@@ -68,6 +68,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </body>

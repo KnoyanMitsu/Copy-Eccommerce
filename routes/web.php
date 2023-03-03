@@ -75,6 +75,27 @@ Route::middleware(['auth'])->group(function () {
     })->name('status');
 });
 
+Route::middleware(['auth', 'checkrole:admin'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.admin');
+    });
+    Route::get('/admin/list-produk', function () {
+        return view('admin.list');
+    });
+    Route::get('/admin/tambah', function () {
+        return view('admin.tambah');
+    });
+    Route::get('/admin/edit', function () {
+        return view('admin.edit');
+    });
+    Route::get('/admin/slide', function () {
+        return view('admin.banner');
+    });
+    Route::get('/admin/reset', function () {
+        return view('admin.resetpass');
+    });
+});
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

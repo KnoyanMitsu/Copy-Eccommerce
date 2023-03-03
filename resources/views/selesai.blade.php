@@ -19,7 +19,7 @@
     </div>
     <div class="justify-content-center text-center">
         <a href="{{ url('/') }}" class="btn btn-primary" style="background-color:#B5CF49">Halaman Utama</a>
-        <a href="#" class="btn btn-primary" style="background-color:#B5CF49">Status</a>
+        <a href="{{ route('status') }}" class="btn btn-primary" style="background-color:#B5CF49">Status</a>
     </div>
 </div>
 

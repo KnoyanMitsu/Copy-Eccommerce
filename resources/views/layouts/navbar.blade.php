@@ -38,6 +38,9 @@
                             </li>
                         @endif
                     @else
+
+
+
                         <a class="dropdown-item nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">

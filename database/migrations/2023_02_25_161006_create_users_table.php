@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('alamat')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->string('role')->nullable();
         });
 
 
