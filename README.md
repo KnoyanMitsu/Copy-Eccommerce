@@ -12,10 +12,12 @@
 - [X] Status pesanan
 - [ ] Halamon admin
 - [Stop] List produt
-- [ ] Tambah produk
+- [X] Tambah produk
+- [X] Delete produk
+- [X] Edit produk
 - [X] About us
 - [X] Contact us
-- [ ] List Product
+- [X] List Product
 - [Ongoing] Detail kategori
 - [Ongoing] Hasil Percarian
 - [ ] List Kategori
