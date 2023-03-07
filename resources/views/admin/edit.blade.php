@@ -11,13 +11,16 @@
             <div class="col">
             </div>
             <div class="col">
-                <form action="" method="POST">
+                <form action="{{ route('update_product', $Dbase->id )}}" method="POST">
+                    @csrf
+                    @method('PUT')
+
                     <div class="form-group">
-                        <input type="text" name="namaproduct" id="product" placeholder="Nama Product" class="form-control mb-2">
-                        <input type="text" name="harga" id="harga" placeholder="Harga" class="form-control mb-2">
-                        <input type="text" name="stok" id="stok" placeholder="Stok Produk" class="form-control mb-2">
-                        <input type="text" name="kategory" id="Kategory" placeholder="Kategory" class="form-control mb-2">
-                        <textarea type="text" name="deskripsi" id="Deskripsi" placeholder="Deskripsi" class="form-control mb-2" rows="10"></textarea>
+                        <input value="{{ $Dbase->judul }}" type="text" name="judul"  placeholder="Nama Product" class="form-control mb-2">
+                        <input value="{{ $Dbase->harga }}" type="text" name="harga" placeholder="Harga" class="form-control mb-2">
+                        <input value="{{ $Dbase->stok }}" type="text" name="stok" placeholder="Stok Produk" class="form-control mb-2">
+                        <input value="{{ $Dbase->kategory }}" type="text" name="kategory" placeholder="Kategory" class="form-control mb-2">
+                        <textarea type="text" name="deskripsi"  placeholder="Dekripsi" class="form-control mb-2" rows="10">{{ $Dbase->deskripsi }}</textarea>
                         <input class="form-control mb-2" id="formFile" type="file">
                         <button type="submit" class="btn mb-3" style="background-color:#B5CF49 ">Upload</button>
                     </div>

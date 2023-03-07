@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ListProduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,25 +76,19 @@ Route::middleware(['auth'])->group(function () {
         }
     })->name('status');
 });
-
 Route::middleware(['auth', 'checkrole:admin'])->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.admin');
-    });
-    Route::get('/admin/list-produk', function () {
-        return view('admin.list');
-    });
-    Route::get('/admin/tambah', function () {
-        return view('admin.tambah');
-    });
-    Route::get('/admin/edit', function () {
-        return view('admin.edit');
-    });
-    Route::get('/admin/slide', function () {
-        return view('admin.banner');
-    });
+    Route::get('/admin/tambah', [ListProduct::class, 'create']);
+    Route::get('/admin/edit/{id}', [ListProduct::class, 'edit'])->name('edit');
+    Route::post('create_product', [ListProduct::class, 'store'])->name('create_product');
+    Route::put('update_product/{id}', [ListProduct::class, 'update'])->name('update_product');
+    Route::delete('/admin/hapusproduct/{id}', [ListProduct::class, 'delete'])->name('Bye');
+    Route::get('/admin/tambah', [ListProduct::class, 'create']);
+    Route::get('/admin/list-produk', [ListProduct::class, 'index'])->name('list_product');
     Route::get('/admin/reset', function () {
         return view('admin.resetpass');
+    });
+    Route::get('/admin', function () {
+        return view('admin.admin');
     });
 });
 
