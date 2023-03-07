@@ -22,6 +22,8 @@
 - [Ongoing] Hasil Percarian
 - [ ] List Kategori
 
+<h1>Figma Design</h1>
+https://www.figma.com/file/4wul1iwTzH9vous8D9sLBk/Untitled?node-id=0%3A1&t=71spXQ6jsTStmWph-0
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
