@@ -21,7 +21,6 @@
 - [Ongoing] Detail kategori
 - [X] Hasil Percarian
 - [Stop] List Kategori
-
 - [ ] Backend Section
 
 <h1>Figma Design</h1>
