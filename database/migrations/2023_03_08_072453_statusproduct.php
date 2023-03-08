@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('statuspengiriman', function (Blueprint $table) {
             $table->id();
-            $table->index(['judul', 'deskripsi'], 'FULLTEXT');
-            $table->bigInteger('users_id')->unsigned()->index()->nullable();
-            $table->string('judul');
-            $table->string('kategory');
-            $table->string('deskripsi');
-            $table->string('harga');
-            $table->string('stok');
+            $table->bigInteger('users_id')->unsigned()->index();
+            $table->bigInteger('product_id')->unsigned()->index();
+            $table->enum('status', ['belum selesai','selesai']);
             $table->foreign('users_id')->references('id')->on('users')
+            ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('product_id')->references('id')->on('products')
             ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('statuspengiriman');
     }
 };

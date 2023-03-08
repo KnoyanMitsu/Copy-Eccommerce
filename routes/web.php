@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ListProduct;
+use App\Http\Controllers\Halaman;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +17,11 @@ use App\Http\Controllers\ListProduct;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
+
+Route::get('/', [Halaman::class, 'index']);
+Route::get('/home', [Halaman::class, 'index']);
+
+Route::get('/cari', [SearchController::class, 'index'])->name('product.search');
 
 Route::get('/about', function () {
     return view('about');
