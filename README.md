@@ -11,7 +11,7 @@
 - [X] Selesai checkout (cod)
 - [X] Status pesanan
 - [ ] Halamon admin
-- [Stop] List produt
+- [X] List produt
 - [X] Tambah produk
 - [X] Delete produk
 - [X] Edit produk
@@ -19,8 +19,8 @@
 - [X] Contact us
 - [X] List Product
 - [Ongoing] Detail kategori
-- [Ongoing] Hasil Percarian
-- [ ] List Kategori
+- [X] Hasil Percarian
+- [Stop] List Kategori
 
 <h1>Figma Design</h1>
 https://www.figma.com/file/4wul1iwTzH9vous8D9sLBk/Untitled?node-id=0%3A1&t=71spXQ6jsTStmWph-0
