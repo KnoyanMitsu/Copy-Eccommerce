@@ -47,7 +47,7 @@ class ListProduct extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect(route('list_product'))->with('berhasil');
+        return redirect(route('list_product'))->with(['success' => 'Product Berhasil Ditambah!']);
     }
 
 
@@ -86,7 +86,7 @@ class ListProduct extends Controller
             'kategory' => $request->kategory,
             'deskripsi' => $request->deskripsi,
         ]);
-        return redirect(route('list_product'))->with('berhasil');
+        return redirect(route('list_product'))->with(['success' => 'Product Berhasil Diupdate!']);
     }
 
     /**
@@ -96,6 +96,6 @@ class ListProduct extends Controller
     {
         $product = Products::find($id);
         $product->delete();
-        return redirect(route('list_product'))->with('berhasil');
+        return redirect(route('list_product'))->with(['success' => 'Product Berhasil Dihapus!']);
     }
 }

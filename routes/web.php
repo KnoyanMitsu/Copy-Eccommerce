@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ListProduct;
 use App\Http\Controllers\Halaman;
 use App\Http\Controllers\SearchController;
-
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\CartViewController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,34 +33,24 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/detail', function () {
-    return view('detail');
-});
+Route::get('/detail/{id}', [DetailController::class,'index'])->name('product.detail');
 
 
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/keranjang', function () {
-        if (Auth::user()->role == 'guest') {
-            return app('App\Http\Auth\RegisterController')->showSettings();
-        } else {
-            return view('keranjang');
-        }
-    })->name('Keranjang');
-});
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/checkout', function () {
-        if (Auth::user()->role == 'guest') {
-            return app('App\Http\Auth\RegisterController')->showSettings();
-        } else {
-            return view('checkout');
-        }
-    })->name('checkout');
-});
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/checkout', function () {
+//         if (Auth::user()->role == 'guest') {
+//             return app('App\Http\Auth\RegisterController')->showSettings();
+//         } else {
+//             return view('checkout');
+//         }
+//     })->name('checkout');
+// });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/selesai', function () {
@@ -80,6 +72,7 @@ Route::middleware(['auth'])->group(function () {
         }
     })->name('status');
 });
+
 Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::get('/admin/tambah', [ListProduct::class, 'create']);
     Route::get('/admin/edit/{id}', [ListProduct::class, 'edit'])->name('edit');
@@ -94,6 +87,12 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::get('/admin', function () {
         return view('admin.admin');
     });
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/cart',[CartViewController::class, 'index'])->name('cart.index');
+    Route::delete('/cart/delete', [CartViewController::class, 'delete'])->name('cart.delete');
 });
 
 

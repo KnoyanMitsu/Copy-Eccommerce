@@ -92,8 +92,8 @@
                 <hr style="height:30px; color:black;">
                 <div class="row">
                     @foreach ($products as $product)
-                        <div class="col-md-3 link-dark" style="width:18rem" href="{{ url('detail',$product->id) }}">
-                            <div class="card shadow">
+                        <a class="col-md-3 link-dark mb-3" style="width:18rem" href="{{ url('detail',$product->id) }}">
+                            <div class="card shadow" style="height: 350px">
                                 <div class="card-body">
                                 <img style="height:200px"
                                 src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
 
                 </div>

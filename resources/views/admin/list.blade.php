@@ -32,11 +32,32 @@
         </div>
 
     </div>
-    @empty
-    <div class="alert alert-danger">
-        Produk List belum Tersedia silahkan klik Tambah Produk.
-    </div>
-    @endforelse
+
 </div>
+@empty
+<div class="alert alert-danger">
+    Produk List belum Tersedia silahkan klik Tambah Produk.
 </div>
+@endforelse
+</div>
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js "></script>
+<link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css " rel="stylesheet">
+
+<script>
+    //message with toastr
+    @if(session()->has('success'))
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil',
+        text: '{{ session("success") }}',
+    })
+    @elseif(session()->has('error'))
+    Swal.fire({
+        icon: 'error',
+        title: 'Gagal',
+        text: '{{ session("error") }}',
+    })
+    @endif
+
+</script>
 @endsection
