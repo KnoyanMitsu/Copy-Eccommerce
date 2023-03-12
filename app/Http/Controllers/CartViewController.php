@@ -24,7 +24,7 @@ class CartViewController extends Controller
 
         return view('keranjang',compact('data'));
     }
-    
+
     public function delete(Request $request)
     {
         $cart = Cart::find($request->id);
@@ -32,4 +32,10 @@ class CartViewController extends Controller
 
         return response()->json(['message' => 'Item berhasil dihapus dari keranjang']);
     }
+
+    public function update(Request $request, $id)
+{
+    Cart::where('id', $id)->update(['quantity' => $request->quantity]);
+    return redirect()->route('cart.index')->with('success', 'Kuantitas barang telah berhasil diubah.');
+}
 }

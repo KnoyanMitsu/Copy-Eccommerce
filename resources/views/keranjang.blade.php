@@ -23,19 +23,27 @@
                         @endphp
                         @forelse ($data as $cart)
                         <tr>
-                            <td><img src="https://i.imgur.com/ZSU3oX4.jpeg"></td>
+                            <td><img style="width: 100px;" src="https://i.imgur.com/ZSU3oX4.jpeg"></td>
                             <td>{{ $cart->judul }}</td>
                             <td>Rp {{ number_format($cart->harga,0,',','.') }}</td>
-                            <td>{{ $cart->quantity }}</td>
+                            <td><form action="{{ route('cart.update', ['id' => $cart->id]) }}" method="post">
+                                @csrf
+                                @method('PUT')
+                                <div class="input-group">
+                                    <input type="number" name="quantity" value="{{ $cart->quantity }}" min="1" class="form-control">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-success">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
                             <td><Button class="btn btn-danger delete-cart-item"  data-id="{{ $cart->id }}">Hapus</Button>
                             @php
                             $totalHarga += $cart->harga * $cart->quantity;
                             @endphp
                         </tr>
                         @empty
-                        <div class="alert alert-danger">
-                            Tidak ada keranjang. silahkan pilih product dan "Add to cart"
-                        </div>
+
                         @endforelse
                     </tbody>
                 </table>
@@ -48,7 +56,7 @@
                 </div>
                 <div class="col mt-3 mb-3">
                     <h2>Rp {{ number_format($totalHarga,0,',','.') }}</h2>
-                    <a href="#" class="btn btn-primary " style="background-color:#B5CF49;">Checkout</a>
+                    <a href="{{ route('checkout.index') }}" class="btn btn-primary " style="background-color:#B5CF49;">Checkout</a>
                 </div>
             </div>
         </div>

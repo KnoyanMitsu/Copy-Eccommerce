@@ -6,48 +6,45 @@
 
     <div class="container">
         <h3 class="font-weight-bold mb-2">Status Pesanan</h3>
-        <div class="card mb-3 mt-2  ">
-            <div class="container">
-                <div class="row mt-3 mb-3">
-                    <img class="foto-produk img-fluid mx-auto mx-lg-0 h-100 h-100 col-2 my-auto img-rounded mb-3 mt-3"
+        <table class="mb-3 mt-3  table">
+            <thead>
+                <tr>
+                    <th>Foto Produk</th>
+                    <th>Nama Produk</th>
+                    <th>Kuantitas</th>
+                    <th>Total Harga</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($data as $datas)
+                <tr>
+                    <td>
+                        <img class="img-fluid my-auto" style="width: 100px;"
                         src="{{ url('https://images.tokopedia.net/img/cache/700/VqbcmM/2023/2/18/0dc57b43-89a2-4faa-94fd-a6dad89cd766.png.webp?ect=4g') }}"
                         alt="">
-                    <div class="d-flex justify-content-between align-items-center col">
-                        <p class="col-5 align-items-center">gantungan kunci - Keychain anime jepang</p>
-                        <p class="col-3 align-items-center text-right font-weight-bold">sedang dikirim</p>
-                    </div>
+                    </td>
+                    <td>
+                        <p class="">{{ $datas->judul }}</p>
+                    </td>
+                    <td>
+                        <p class="">{{ $datas->quantity }}</p>
+                    </td>
+                    <td>
+                        <p class="">{{ $datas->total }}</p>
+                    </td>
+                    <td>
+                        <p class="font-weight-bold">{{ $datas->status }}</p>
+                    </td>
+                </tr>
+                @empty
+                <div class="alert alert-danger">
+                    Silahkan Beli barang dahulu untuk melihat status pengiriman
                 </div>
+                @endforelse
+            </tbody>
 
-            </div>
-        </div>
-        <div class="card mb-3">
-            <div class="container">
-                <div class="row mt-3 mb-3">
-                    <img class="foto-produk img-fluid mx-auto mx-lg-0 h-100 h-100 col-2 my-auto img-rounded mb-3 mt-3"
-                        src="{{ url('https://images.tokopedia.net/img/cache/700/VqbcmM/2023/2/18/0dc57b43-89a2-4faa-94fd-a6dad89cd766.png.webp?ect=4g') }}"
-                        alt="">
-                    <div class="d-flex justify-content-between align-items-center col">
-                        <p class="col-5 align-items-center">gantungan kunci - Keychain anime jepang</p>
-                        <p class="col-3 align-items-center text-right font-weight-bold">sedang dikirim</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="card mb-3">
-            <div class="container">
-                <div class="row mt-3 mb-3">
-                    <img class="foto-produk img-fluid mx-auto mx-lg-0 h-100 h-100 col-2 my-auto img-rounded mb-3 mt-3"
-                        src="{{ url('https://images.tokopedia.net/img/cache/700/VqbcmM/2023/2/18/0dc57b43-89a2-4faa-94fd-a6dad89cd766.png.webp?ect=4g') }}"
-                        alt="">
-                    <div class="d-flex justify-content-between align-items-center col">
-                        <p class="col-5 align-items-center">gantungan kunci - Keychain anime jepang</p>
-                        <p class="col-3 align-items-center text-right font-weight-bold">sedang dikirim</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        </table>
 
     </div>
 </body>

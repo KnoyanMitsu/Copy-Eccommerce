@@ -45,8 +45,6 @@
                         <a class="nav-link" style="color:black" href="{{ url('/') }}">{{ __('Home') }}</a>
                     </li>
 
-
-
                     <div class="dropdown">
                         <button type="button" class="btn dropdown-toggle material-symbols-outlined" data-toggle="dropdown" style="background-color:#B5CF49;">
                             shopping_cart

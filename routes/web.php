@@ -8,6 +8,9 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CartViewController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AlamatController;
+use App\Http\Controllers\StatusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,15 +66,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/status', function () {
-        if (Auth::user()->role == 'guest') {
-            return app('App\Http\Auth\RegisterController')->showSettings();
-        } else {
-            return view('status');
-        }
-    })->name('status');
-});
 
 Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::get('/admin/tambah', [ListProduct::class, 'create']);
@@ -93,6 +87,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart'])->name('cart.add');
     Route::get('/cart',[CartViewController::class, 'index'])->name('cart.index');
     Route::delete('/cart/delete', [CartViewController::class, 'delete'])->name('cart.delete');
+    Route::put('/cart/update/{id}', [CartViewController::class, 'update'])->name('cart.update');
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+    Route::get('/update/alamat', [AlamatController::class, 'index'])->name('alamat.index');
+    Route::post('/update/alamat', [AlamatController::class, 'store'])->name('alamat.store');
+    Route::post('/checkout/selesai', [CheckoutController::class, 'create'])->name('checkout.create');
+    Route::get('/status', [StatusController::class, 'index'])->name('status.index');
 });
 
 

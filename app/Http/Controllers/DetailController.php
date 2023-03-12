@@ -9,6 +9,7 @@ class DetailController extends Controller
 
     public function index($id)
     {
+        
         $products = Products::latest()->paginate(10);
         $detail = Products::find($id);
 

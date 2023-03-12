@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('users_id')->unsigned()->index();
             $table->bigInteger('product_id')->unsigned()->index();
+            $table->string('quantity');
+            $table->string('total');
             $table->enum('status', ['belum selesai','selesai']);
             $table->foreign('users_id')->references('id')->on('users')
             ->onDelete('cascade')->onUpdate('cascade');

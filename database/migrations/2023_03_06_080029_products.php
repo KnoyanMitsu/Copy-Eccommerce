@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->index(['judul', 'deskripsi'], 'FULLTEXT');
+            $table->fullText(['judul', 'kategory','deskripsi']);
             $table->bigInteger('users_id')->unsigned()->index()->nullable();
             $table->string('judul');
             $table->string('kategory');
-            $table->string('deskripsi');
+            $table->longText('deskripsi');
             $table->string('harga');
             $table->string('stok');
             $table->foreign('users_id')->references('id')->on('users')

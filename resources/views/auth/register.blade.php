@@ -37,7 +37,7 @@
 
                         <div class="row mb-4">
                             <div>
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="Nomor Telepon">
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="Nomor Telepon">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">

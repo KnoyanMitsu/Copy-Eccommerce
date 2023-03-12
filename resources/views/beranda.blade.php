@@ -91,7 +91,7 @@
             <h2 class="text-center mb-3">Product</h1>
                 <hr style="height:30px; color:black;">
                 <div class="row">
-                    @foreach ($products as $product)
+                    @forelse ($products as $product)
                         <a class="col-md-3 link-dark mb-3" style="width:18rem" href="{{ url('detail',$product->id) }}">
                             <div class="card shadow" style="height: 350px">
                                 <div class="card-body">
@@ -105,7 +105,11 @@
                             </div>
                             </div>
                         </a>
-                    @endforeach
+                    @empty
+                    <div class="alert alert-danger">
+                       Maaf untuk saat ini belum ada product
+                    </div>
+                    @endforelse
 
                 </div>
         </div>

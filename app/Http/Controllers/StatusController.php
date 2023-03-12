@@ -1,20 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Models\Cart;
 use App\Models\Products;
+use App\Models\Status;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-class SearchController extends Controller
+class StatusController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchKeywords = $request->input('search');
-        $products = Products::whereRaw('MATCH(judul, kategory, deskripsi) AGAINST(? IN BOOLEAN MODE)', [$searchKeywords])->get();
-        return view('cari',['products' => $products, 'search' => $searchKeywords]);
+        $user = Auth::user();
+        $user_id = Auth::id();
+        $data = DB::table('statuspengiriman')
+            ->join('products', 'statuspengiriman.product_id', '=', 'products.id')
+            ->where('statuspengiriman.users_id', $user_id)
+            ->select('statuspengiriman.*', 'products.judul', 'products.harga','quantity','total','status')
+            ->get();
+        return view('status', compact('data'));
     }
 
     /**
