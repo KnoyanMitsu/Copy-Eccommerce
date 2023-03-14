@@ -11,6 +11,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AlamatController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\PengirimanController;
+use App\Http\Controllers\ComentarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +77,7 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::delete('/admin/hapusproduct/{id}', [ListProduct::class, 'delete'])->name('Bye');
     Route::get('/admin/tambah', [ListProduct::class, 'create']);
     Route::get('/admin/list-produk', [ListProduct::class, 'index'])->name('list_product');
+    Route::get('/admin/list-pengiriman', [PengirimanController::class, 'index'])->name('list_pengiriman.index');
     Route::get('/admin/reset', function () {
         return view('admin.resetpass');
     });
@@ -93,7 +96,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/update/alamat', [AlamatController::class, 'index'])->name('alamat.index');
     Route::post('/update/alamat', [AlamatController::class, 'store'])->name('alamat.store');
     Route::post('/checkout/selesai', [CheckoutController::class, 'create'])->name('checkout.create');
+    Route::post('/comment/{product}', [ComentarController::class, 'store'])->name('commentar.create');
     Route::get('/status', [StatusController::class, 'index'])->name('status.index');
+
 });
 
 

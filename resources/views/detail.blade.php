@@ -20,8 +20,8 @@
                                 @csrf
                             <div class="row gap-4">
                                 <input type="number" name="quantity"  class="form-control" value="1">
-                                <a class="col btn btn-primary  btn"  href="#"
-                                    style="background-color:#B5CF49; width: 200px;">Beli sekarang</a>
+                                <button class="col btn btn-primary  btn"  href="#"
+                                    style="background-color:#B5CF49; width: 200px;">Beli sekarang</button>
                                 <button class="col btn btn-primary  btn"
                                     style="background-color:#B5CF49;" type="submit">Add to cart</button>
                             </div>
@@ -35,6 +35,41 @@
             <div class="container mt-4 mb-4">
                 <h4 class="card-title">Deskripsi Product</h4>
                 <p class="card-text">{{ $detail->deskripsi }}</p>
+            </div>
+        </div>
+        {{-- Komentar --}}
+        <div class="card mb-4">
+            <div class="container mt-4 mb-4">
+                <h4 class="card-title">Komentar</h4>
+                <div class="card-body">
+                    @forelse ($data as $datas)
+
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABR0lEQVRIS7VVixHBQBBNKkAHVIAKUAEqEBWgAlRAB6IDHaADKqAEKuC9zF3m5tzl7iTZmR3JWu/tXxzVLHHN+FEowQ0BfaB938BCCBKAHgTwHJ+pD0kIwQWAAwHK51GVBEOAnTVAEpCoUHwzYDlmGtIR7yxbaYI2EB4WlA7szyIGNYMJHLtQAlIpTWjPESQn6yV8SEa9Q0+0qQQcvyolw1YJErzLMSxLlI+x3uSyJG9EtoSmMkLTFP1LQvAhlD3JxTamoSRGcL0Het33MCw8m2FduqJFuwBcngYXzwoODOhHighCxvYq6u9NwGbpt8eVRQsOcuGcTeao7QyIW2FbG76bwpZtryq2EtFxrDhy9ROoHEGejxTK0yLFePxsBEy1IX7JqDeW+tAus3nimcfPKwMZqRq1hSM7hsyG8nMYff8PbOBOe+0EXxeJNRkmAuuOAAAAAElFTkSuQmCC"/> {{ $datas->bintang }}</p>
+                        <h5 class="font-weight-bold">{{ $datas->name }}</h5><p>
+                        <p>{{ $datas->comentar }}</p>
+                    </div>
+
+                    @empty
+                    <div class="alert alert-danger">
+                        Belum ada komentar
+                    </div>
+                    @endforelse
+                    <hr style="color:black;">
+                    <form action="{{ route('commentar.create',$detail->id) }}" method="POST">
+                        @csrf
+                        <label for="bintang">Pilih bintang:</label>
+                        <select name="bintang" class="form-select mb-3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input type="text" name="comentar" class="form-control mb-2" placeholder="Isi tanggapan anda">
+                        <button type="submit" class="btn mb-2" style="background-color:#B5CF49;">Kirim</button>
+                    </form>
+                </div>
             </div>
         </div>
         <!--Product Lainnya-->
@@ -60,6 +95,5 @@
 
                 </div>
         </div>
-        @include('layouts.footbar')
 </body>
 @endsection

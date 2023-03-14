@@ -9,6 +9,7 @@
 
         <div class="row">
             <div class="col">
+                <input class="form-control mb-2" id="formFile" type="file">
             </div>
             <div class="col">
                 <form action="{{ route('update_product', $Dbase->id )}}" method="POST">
@@ -21,7 +22,6 @@
                         <input value="{{ $Dbase->stok }}" type="text" name="stok" placeholder="Stok Produk" class="form-control mb-2">
                         <input value="{{ $Dbase->kategory }}" type="text" name="kategory" placeholder="Kategory" class="form-control mb-2">
                         <textarea type="text" name="deskripsi"  placeholder="Dekripsi" class="form-control mb-2" rows="10">{{ $Dbase->deskripsi }}</textarea>
-                        <input class="form-control mb-2" id="formFile" type="file">
                         <button type="submit" class="btn mb-3" style="background-color:#B5CF49 ">Upload</button>
                     </div>
                 </form>

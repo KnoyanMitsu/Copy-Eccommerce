@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container">
-    <h2 class="font-weight-bold">Hasil Percarian "{{ $search }}"</h2>
+    <h2 class="font-weight-bold">Hasil Pencarian "{{ $search }}"</h2>
     <div class="mb-5">
-            <hr style="height:30px; color:black;">
+            <hr color:black;">
             <div class="row">
                 @foreach ($products as $product)
                 <div class="col-md-3">

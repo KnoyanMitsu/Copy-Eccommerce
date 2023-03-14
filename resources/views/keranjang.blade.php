@@ -6,7 +6,7 @@
     <div class="container">
         <div class="card mt-3 mb-3">
             <div class="container mt-3 mb-3">
-                <h2 class="font-weight-bold">Kerajang</h2>
+                <h2 class="font-weight-bold">Keranjang</h2>
                 <table class=" table" >
                     <thead>
                         <tr>
@@ -52,10 +52,11 @@
         </div>
         <div class="card">
             <div class="row container">
-                <div class="mt-5 mb-5  col">
+                <div class="mt-3  mb-3 col">
+                    <h2 class="">Total Harga: Rp {{ number_format($totalHarga,0,',','.') }}</h2>
                 </div>
                 <div class="col mt-3 mb-3">
-                    <h2>Rp {{ number_format($totalHarga,0,',','.') }}</h2>
+
                     <a href="{{ route('checkout.index') }}" class="btn btn-primary " style="background-color:#B5CF49;">Checkout</a>
                 </div>
             </div>

@@ -46,50 +46,43 @@
             </a>
         </div>
         <div class="justify-content-center mb-5">
-            <h2 class="text-center mb-3 ">Kategorssy</h1>
+            <h2 class="text-center mb-3 ">Kategory</h1>
                 <hr>
                 <div class="row gap-5 row-cols-5">
                     <div class="card col" style="width:13rem;" >
                         <div class="card-body">
-                            <h5 class="card-title text-center">Kategory 1</h5>
+                            <h5 class="card-title text-center">Pakaian</h5>
                         </div>
                     </div>
 
                     <div class="card col" style="width:13rem;">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Kategory 1</h5>
+                            <h5 class="card-title text-center">Accessoris</h5>
                         </div>
                     </div>
 
                     <div class="card col" style="width:13rem;">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Kategory 1</h5>
+                            <h5 class="card-title text-center">Elektronik</h5>
                         </div>
                     </div>
 
                     <div class="card col" style="width:13rem;">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Kategory 1</h5>
+                            <h5 class="card-title text-center">Sepatu</h5>
                         </div>
                     </div>
                     <div class="card col" style="width:13rem;">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Kategory 1</h5>
+                            <h5 class="card-title text-center">Tas</h5>
                         </div>
                     </div>
-                    <div class="card col" style="width:13rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Kategory 1</h5>
-                        </div>
-                    </div>
-
-
                 </div>
         </div>
 
         <div class="mb-5">
             <h2 class="text-center mb-3">Product</h1>
-                <hr style="height:30px; color:black;">
+                <hr color:black;">
                 <div class="row">
                     @forelse ($products as $product)
                         <a class="col-md-3 link-dark mb-3" style="width:18rem" href="{{ url('detail',$product->id) }}">
@@ -113,6 +106,8 @@
 
                 </div>
         </div>
-        @include('layouts.footbar')
+
 </body>
 @endsection
+
+

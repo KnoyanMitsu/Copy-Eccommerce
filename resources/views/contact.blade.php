@@ -25,5 +25,5 @@
         </div>
     </div>
 </body>
-
+@include('layouts.footbar')
 @endsection
