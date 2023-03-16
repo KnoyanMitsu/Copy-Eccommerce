@@ -21,7 +21,7 @@
                 <tr>
                     <td>
                         <img class="img-fluid my-auto" style="width: 100px;"
-                        src="{{ url('https://images.tokopedia.net/img/cache/700/VqbcmM/2023/2/18/0dc57b43-89a2-4faa-94fd-a6dad89cd766.png.webp?ect=4g') }}"
+                        src="{{ Storage::url('public/posts/').$datas->image }}"
                         alt="">
                     </td>
                     <td>

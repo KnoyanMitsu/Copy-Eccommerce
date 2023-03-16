@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Products;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class ListProduct extends Controller
 {
     /**
@@ -32,6 +32,7 @@ class ListProduct extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'image'     => 'required|mimes:png,jpg,jpeg|max:2048',
             'judul' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -39,7 +40,11 @@ class ListProduct extends Controller
             'deskripsi' => 'required',
         ]);
 
+        $image = $request->file('image');
+        $image->storeAs('public/posts', $image->hashName());
+
         Products::create([
+            'image' => $image->hashName(),
             'judul' => $request->judul,
             'harga' => $request->harga,
             'stok' => $request->stok,
@@ -68,9 +73,10 @@ class ListProduct extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Products $id)
     {
         $this->validate($request,[
+            'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'judul' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -78,24 +84,48 @@ class ListProduct extends Controller
             'deskripsi' => 'required',
         ]);
 
-        $product = Products::findOrFail($id);
-        $product->update([
-            'judul' => $request->judul,
-            'harga' => $request->harga,
-            'stok' => $request->stok,
-            'kategory' => $request->kategory,
-            'deskripsi' => $request->deskripsi,
-        ]);
+        if ($request->hasFile('image')) {
+
+            //upload new image
+            $image = $request->file('image');
+            $image->storeAs('public/posts', $image->hashName());
+
+            //delete old image
+            Storage::delete('public/posts/'.$id->image);
+
+            //update post with new image
+            $id->update([
+                'image' => $image->hashName(),
+                'judul' => $request->judul,
+                'harga' => $request->harga,
+                'stok' => $request->stok,
+                'kategory' => $request->kategory,
+                'deskripsi' => $request->deskripsi,
+            ]);
+
+        } else {
+
+            //update post without image
+            $id->update([
+                'judul' => $request->judul,
+                'harga' => $request->harga,
+                'stok' => $request->stok,
+                'kategory' => $request->kategory,
+                'deskripsi' => $request->deskripsi,
+            ]);
+        }
+
         return redirect(route('list_product'))->with(['success' => 'Product Berhasil Diupdate!']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function delete($id)
+    public function delete(Products $id)
     {
-        $product = Products::find($id);
-        $product->delete();
+         Storage::delete('public/posts/'. $id->image);
+
+        $id->delete();
         return redirect(route('list_product'))->with(['success' => 'Product Berhasil Dihapus!']);
     }
 }

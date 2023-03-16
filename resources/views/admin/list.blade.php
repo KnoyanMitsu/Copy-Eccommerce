@@ -16,7 +16,7 @@
 
         <div class="row mt-3 mb-3">
             <img class="foto-produk img-fluid mx-auto mx-lg-0 h-100 h-100 col-2 my-auto img-rounded mb-3 mt-3"
-                src="{{ url('https://images.tokopedia.net/img/cache/700/VqbcmM/2023/2/18/0dc57b43-89a2-4faa-94fd-a6dad89cd766.png.webp?ect=4g') }}"
+                src="{{ Storage::url('public/posts/').$products->image }}"
                 alt="">
             <div class="d-flex justify-content-between align-items-center col">
                 <p class="col-5 align-items-center">{{ $products->judul }}</p>

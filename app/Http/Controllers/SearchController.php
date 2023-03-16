@@ -13,7 +13,7 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $searchKeywords = $request->input('search');
-        $products = Products::whereRaw('MATCH(judul, kategory, deskripsi) AGAINST(? IN BOOLEAN MODE)', [$searchKeywords])->get();
+        $products = Products::whereRaw('MATCH(judul, deskripsi) AGAINST(? IN BOOLEAN MODE)', [$searchKeywords])->get();
         return view('cari',['products' => $products, 'search' => $searchKeywords]);
     }
 

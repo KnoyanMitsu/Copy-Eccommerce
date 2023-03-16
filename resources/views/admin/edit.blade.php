@@ -6,13 +6,17 @@
     <div class=" mb-3 ">
         <h1 class="mb-4">Edit Product</h1>
         <p>Silahkan Edit produk anda</p>
+        <form action="{{ route('update_product', $Dbase->id )}}" method="POST" enctype="multipart/form-data">
+        @if($errors->any())
+        {{ implode('', $errors->all('<div class="alert alert-danger">:message</div>')) }}
+    @endif
 
         <div class="row">
             <div class="col">
-                <input class="form-control mb-2" id="formFile" type="file">
+                <input class="form-control mb-2" id="formFile" type="file" name="image">
             </div>
             <div class="col">
-                <form action="{{ route('update_product', $Dbase->id )}}" method="POST">
+
                     @csrf
                     @method('PUT')
 

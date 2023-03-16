@@ -20,7 +20,7 @@ class StatusController extends Controller
         $data = DB::table('statuspengiriman')
             ->join('products', 'statuspengiriman.product_id', '=', 'products.id')
             ->where('statuspengiriman.users_id', $user_id)
-            ->select('statuspengiriman.*', 'products.judul', 'products.harga','quantity','total','status')
+            ->select('statuspengiriman.*', 'products.judul', 'products.harga', 'products.image','quantity','total','status')
             ->get();
         return view('status', compact('data'));
     }

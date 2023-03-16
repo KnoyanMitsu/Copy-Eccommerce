@@ -19,7 +19,7 @@ class CartViewController extends Controller
         $data = DB::table('cart')
             ->join('products', 'cart.product_id', '=', 'products.id')
             ->where('cart.users_id', $user_id)
-            ->select('cart.*', 'products.judul', 'products.harga','quantity')
+            ->select('cart.*', 'products.judul', 'products.harga', 'products.image','quantity')
             ->get();
 
         return view('keranjang',compact('data'));

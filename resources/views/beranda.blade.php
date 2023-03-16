@@ -89,7 +89,7 @@
                             <div class="card shadow" style="height: 350px">
                                 <div class="card-body">
                                 <img style="height:200px"
-                                src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                                src="{{ Storage::url('public/posts/').$product->image }}"
                                 class="card-img-top" alt="...">
                                 <div class="mt-2">
                                     <h5 class="card-title">{{ $product->judul }}</h5>

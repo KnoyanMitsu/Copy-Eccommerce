@@ -15,6 +15,19 @@ class DetailController extends Controller
         $products = Products::latest()->paginate(10);
         $detail = Products::find($id);
 
+        $bintang = DB::table('comentar')
+        ->join('products', 'comentar.product_id', '=', 'products.id')
+        ->where('products.id', '=', $detail->id)
+        ->select('comentar.*','bintang')
+        ->get();
+
+        $avgstar = DB::table('products')
+        ->join('comentar','products.id', '=', 'comentar.product_id')
+        ->where('products.id', '=', $detail->id)
+        ->avg('bintang');
+
+        $intavgstar = round($avgstar);
+
         $data = DB::table('comentar')
         ->join('products', 'comentar.product_id', '=', 'products.id')
         ->join('users', 'comentar.users_id', '=', 'users.id')
@@ -23,7 +36,7 @@ class DetailController extends Controller
         ->paginate(5);
 
 
-        return view('detail',compact('detail','products','data'));
+        return view('detail',compact('detail','products','data','intavgstar'));
     }
 
 

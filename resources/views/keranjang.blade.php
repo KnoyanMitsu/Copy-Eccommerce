@@ -23,7 +23,7 @@
                         @endphp
                         @forelse ($data as $cart)
                         <tr>
-                            <td><img style="width: 100px;" src="https://i.imgur.com/ZSU3oX4.jpeg"></td>
+                            <td><img style="width: 100px;" src="{{ Storage::url('public/posts/').$cart->image }}"></td>
                             <td>{{ $cart->judul }}</td>
                             <td>Rp {{ number_format($cart->harga,0,',','.') }}</td>
                             <td><form action="{{ route('cart.update', ['id' => $cart->id]) }}" method="post">

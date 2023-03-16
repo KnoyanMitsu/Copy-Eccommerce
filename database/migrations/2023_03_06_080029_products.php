@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->fullText(['judul', 'kategory','deskripsi']);
+            $table->fullText(['judul','deskripsi']);
             $table->bigInteger('users_id')->unsigned()->index()->nullable();
             $table->string('judul');
-            $table->string('kategory');
+            $table->enum('kategory',['pakaian','accessoris','elektronik','sepatu','tas']);
             $table->longText('deskripsi');
-            $table->string('harga');
+            $table->integer('harga');
+            $table->string('image');
             $table->string('stok');
             $table->foreign('users_id')->references('id')->on('users')
             ->onDelete('cascade')->onUpdate('cascade');

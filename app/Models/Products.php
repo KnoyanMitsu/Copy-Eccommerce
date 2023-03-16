@@ -12,6 +12,7 @@ class Products extends Model
         'users_id',
         'judul',
         'kategory',
+        'image',
         'deskripsi',
         'harga',
         'stok',
