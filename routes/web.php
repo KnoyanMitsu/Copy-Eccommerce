@@ -13,6 +13,8 @@ use App\Http\Controllers\AlamatController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\ComentarController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SlideController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +31,7 @@ Route::get('/', [Halaman::class, 'index']);
 Route::get('/home', [Halaman::class, 'index']);
 
 Route::get('/cari', [SearchController::class, 'index'])->name('product.search');
-
+Route::get('/product/{kategory}', [CategoryController::class, 'index'])->name('product.kategory');
 Route::get('/about', function () {
     return view('about');
 });
@@ -78,6 +80,12 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
     Route::get('/admin/tambah', [ListProduct::class, 'create']);
     Route::get('/admin/list-produk', [ListProduct::class, 'index'])->name('list_product');
     Route::get('/admin/list-pengiriman', [PengirimanController::class, 'index'])->name('list_pengiriman.index');
+    Route::get('/admin/slideshow', [SlideController::class, 'index'])->name('slide.index');
+    Route::get('/admin/slideshow/tambah', [SlideController::class, 'create'])->name('slide.create');
+    Route::post('create_slide', [SlideController::class, 'store'])->name('create_slide');
+    Route::get('/admin/editslide/{id}', [SlideController::class, 'edit'])->name('slide.edit');
+    Route::put('update_slide/{id}', [SlideController::class, 'update'])->name('slide.update');
+    Route::delete('/admin/hapusslide/{id}', [SlideController::class, 'destroy'])->name('slide.Bye');
     Route::get('/admin/reset', function () {
         return view('admin.resetpass');
     });

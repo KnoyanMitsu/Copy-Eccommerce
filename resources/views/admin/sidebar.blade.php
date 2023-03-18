@@ -27,7 +27,7 @@
                 <div class="nav_list"> <a href="{{ url('/admin') }}" class="nav_link "> <i class='bx bx-grid-alt nav_icon'></i> <span
                             class="nav_name">Dashboard</span> </a> <a href="{{ url('/admin/list-produk') }}" class="nav_link"> <i
                             class='bx bx-list-ul nav_icon'></i> <span class="nav_name">List Produk</span> <a href="{{ route('list_pengiriman.index') }}" class="nav_link"> <i
-                                class='bx bx-package nav_icon'></i> <span class="nav_name">List Pengiriman</span> </a> <a href="{{ url('admin/slide') }}"
+                                class='bx bx-package nav_icon'></i> <span class="nav_name">List Pengiriman</span> </a> <a href="{{ url('admin/slideshow') }}"
                         class="nav_link"> <i class='bx bx-edit-alt nav_icon'></i> <span
                             class="nav_name">Edit Slide</span> </a> <a href="{{ url('/admin/reset') }}" class="nav_link"> <i
                             class='bx bx-lock-alt nav_icon'></i> <span class="nav_name">Ganti Password</span> </a> </div>

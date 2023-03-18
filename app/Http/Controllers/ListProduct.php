@@ -76,7 +76,6 @@ class ListProduct extends Controller
     public function update(Request $request,Products $id)
     {
         $this->validate($request,[
-            'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'judul' => 'required',
             'harga' => 'required',
             'stok' => 'required',

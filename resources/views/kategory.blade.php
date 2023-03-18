@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="font-weight-bold">Hasil Pencarian "{{ $search }}"</h2>
+    <h2 class="font-weight-bold">Hasil Kategori "{{ $name }}"</h2>
     <div class="mb-5">
             <hr color:black;">
             <div class="row">
@@ -16,7 +16,7 @@
                             class="card-img-top" alt="...">
                             <div class="mt-2">
                                 <h5 class="card-title">{{ $product->judul }}</h5>
-                                <p class="card-text">Rp {{ $product->harga }}</p>
+                                <p class="card-text">Rp {{ number_format($product->harga,0,',','.') }}</p>
                             </div>
                         </div>
                         </div>
